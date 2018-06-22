@@ -1,8 +1,6 @@
 package models;
 
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,11 +15,11 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getAllTasks",
-            query = "select t from Tasklist as t order by t.id desc"
+            query = "select t from Task as t order by t.id desc"
             )
 })
 @Table(name = "tasks")
-public class Tasklist {
+public class Task {
 
     //カラム
     @Id
@@ -32,11 +30,13 @@ public class Tasklist {
     @Column(name = "content", length = 255, nullable = false)
     private String content;
 
-    @Column(name = "start_date", nullable = false)
-    private Date start_date;
 
-    @Column(name = "deadline")
-    private Date deadline;
+    //開始日＆終了日
+    //@Column(name = "start_date")
+    //private Date start_date;
+
+    //@Column(name = "deadline")
+    //private Date deadline;
 
 
 
@@ -58,7 +58,9 @@ public class Tasklist {
         this.content = content;
     }
 
-    public Date getStart_date() {
+
+    //開始日・終了日
+ /*   public Date getStart_date() {
         return start_date;
     }
 
@@ -72,6 +74,6 @@ public class Tasklist {
 
     public void setDeadline(Date deadline) {
         this.deadline = deadline;
-    }
+    } */
 
 }
