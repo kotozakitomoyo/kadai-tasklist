@@ -11,9 +11,10 @@
 			         <c:import url="form.jsp" />
 			     </form>
 
-			      <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
-
-			      <p><a href="#" onclick="confirmDestroy();">この予定を削除する</a></p>
+                <div class="link">
+			      <a href="${pageContext.request.contextPath}/index" class="topbtn">TOP</a>
+			      <a href="#" onclick="confirmDestroy();" class="btn">削除</a>
+			    </div>
 			      <form method="POST" action="${pageContext.request.contextPath}/destroy">
 			         <input type="hidden" name="_token" value="${_token}" />
 			      </form>

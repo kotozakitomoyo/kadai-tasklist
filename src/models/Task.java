@@ -1,6 +1,8 @@
 package models;
 
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,27 +29,39 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "content", length = 255, nullable = false)
+    @Column(name="title", length=100, nullable = false)
+    private String title;
+
+    @Column(name="content", length=255)
     private String content;
 
+    @Column(name = "start_date")
+    private Date start_date;
 
-    //開始日＆終了日
-    //@Column(name = "start_date")
-    //private Date start_date;
+    @Column(name = "deadline_date")
+    private Date deadline_date;
 
-    //@Column(name = "deadline")
-    //private Date deadline;
-
+    @Column(name="sintyoku")
+    private String sintyoku;
 
 
-    //ゲッターセッター
 
+
+  //ゲッターセッター
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getContent() {
@@ -58,9 +72,7 @@ public class Task {
         this.content = content;
     }
 
-
-    //開始日・終了日
- /*   public Date getStart_date() {
+    public Date getStart_date() {
         return start_date;
     }
 
@@ -68,12 +80,24 @@ public class Task {
         this.start_date = start_date;
     }
 
-    public Date getDeadline() {
-        return deadline;
+    public Date getDeadline_date() {
+        return deadline_date;
     }
 
-    public void setDeadline(Date deadline) {
-        this.deadline = deadline;
-    } */
+    public void setDeadline_date(Date deadline_date) {
+        this.deadline_date = deadline_date;
+    }
+
+    public String getSintyoku() {
+        return sintyoku;
+    }
+
+    public void setSintyoku(String sintyoku) {
+        this.sintyoku = sintyoku;
+    }
+
+
+
+
 
 }

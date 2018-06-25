@@ -9,19 +9,21 @@
             </div>
         </c:if>
 
-        <h2>タスク一覧</h2>
+        <div class="head">タスク一覧</div>
+
         <ul>
             <c:forEach var="task" items="${ tasks }">
                 <li>
-                    <a href="${pageContext.request.contextPath}/show?id=${task.id}">
-                        <c:out value="${task.id}" />
-                    </a>
-                    :<c:out value="${task.content}" />
+                    <a href="${pageContext.request.contextPath}/show?id=${task.id}">▼</a>
+                    <span class="indextitle"><c:out value="${task.title}" /></span>
+                    <span class="shintyoku"><c:out value="${task.sintyoku}" /></span>
                 </li>
             </c:forEach>
         </ul>
 
-        <p><a href="${pageContext.request.contextPath}/new">タスクを追加する</a></p>
+        <a href="${pageContext.request.contextPath}/new" class="btn">追加</a>
+
+
 
     </c:param>
 </c:import>

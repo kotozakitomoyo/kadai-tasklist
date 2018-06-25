@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -41,9 +42,26 @@ public class CreateServlet extends HttpServlet {
 
 	        Task t = new Task();
 
+
+	        String title = request.getParameter("title");
+	        t.setTitle(title);
+
 	        String  content = request.getParameter("content");
 	        t.setContent(content);
 
+	        Date start_date = null;
+            start_date = Date.valueOf(request.getParameter("start_date"));
+            t.setStart_date(start_date);
+
+	        Date deadline_date = Date.valueOf(request.getParameter("deadline_date"));
+	        t.setDeadline_date(deadline_date);
+
+	        String sintyoku = request.getParameter("sintyoku");
+	        t.setSintyoku(sintyoku);
+
+
+
+	        //バリデーター
 	        List<String> errors = TaskValidator.validate(t);
 	        if(errors.size() > 0){
 	            em.close();

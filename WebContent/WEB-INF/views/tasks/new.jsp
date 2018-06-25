@@ -9,7 +9,7 @@
             <c:import url="form.jsp" />
         </form>
 
-        <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
+        <p><a href="${pageContext.request.contextPath}/index" class="topbtn">TOP</a></p>
 
     </c:param>
 </c:import>

@@ -9,16 +9,16 @@
         <link rel="stylesheet" href="<c:url value='/css/style.css' />">
     </head>
     <body>
-        <div id="wrapper">
-	        <div id="header">
-	            <h1>タスク管理</h1>
-	        </div>
-	        <div>
-	            ${param.content}
-	        </div>
-	        <div id="footer">
-	            by Kotozaki
-	        </div>
-        </div>
+	    <div id="header">
+	       <h1>タスク管理</h1>
+	    </div>
+
+	    <div id="main">
+	       ${param.content}
+	    </div>
+
+	    <div id="footer">
+	       KD13
+	    </div>
     </body>
 </html>
